@@ -1,0 +1,193 @@
+/* styles.css */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;700&display=swap");
+
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Basic body styling */
+body {
+  font-family: "Inter", Arial, sans-serif;
+  background-color: rgb(
+    249,
+    239,
+    239
+  ); /* Background color for the entire page */
+  color: black; /* Text color */
+}
+
+/* Container styling */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header styling */
+.header {
+  background-color: rgb(232, 169, 169); /* Slightly darker red for the header */
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo {
+  font-size: 40px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #de4141, #791919, #2d69a1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu-item {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.menu-item:hover {
+  text-decoration: underline;
+}
+
+/* Main content styling */
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Center the profile section horizontally */
+  align-items: center; /* Center the profile section vertically */
+  position: relative; /* Make the container for the profile image position relative */
+  padding: 20px;
+}
+.intro-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.intro-text h1 {
+  font-size: 32px;
+}
+
+.intro-text h2 {
+  font-family: "Inter", sans-serif;
+  font-weight: 200; /* Extra Light */
+  font-size: 50px;
+  margin: 10px 0;
+  opacity: 0;
+  transform: translate(-100%, -100%);
+  animation: slideInFromTopLeft 1.5s ease-out forwards;
+}
+
+@keyframes slideInFromTopLeft {
+  0% {
+    opacity: 0;
+    transform: translate(-150%, -150%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.contact-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.rectangle {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  margin-right: 10px;
+}
+
+.contact-text {
+  font-size: 18px;
+}
+
+/* Profile image styling */
+.profile-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ellipse {
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background-color: #2d69a1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  transition: background 0.3s ease;
+}
+
+.profile-image img {
+  width: 500px;
+  height: 550px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 2;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.profile-image img:hover {
+  filter: grayscale(0%);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* .profile-image:hover .ellipse {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 153, 255, 0.7),
+    rgba(12, 96, 232, 0.7),
+    rgba(206, 23, 23, 0.7)
+  );
+  animation: rotate 2s linear infinite;
+} */
+
+/* Footer styling */
+.footer {
+  padding: 10px 20px;
+  text-align: center;
+}
+.footerr {
+  background: linear-gradient(135deg, #de4141, #2d69a1);
+  padding: 5px 10px;
+  text-align: center;
+}
+
+.social-icons {
+  margin-bottom: 10px;
+}
+
+.social-icon {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 18px;
+}
+
+.footer-text {
+  font-size: 14px;
+}
